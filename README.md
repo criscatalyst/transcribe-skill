@@ -1,25 +1,25 @@
 # Transcribe — Claude Code skill
 
-Trascrive qualsiasi video da link (Instagram reel, TikTok, YouTube, YT Shorts, Twitter/X, Vimeo, ecc.) usando OpenAI Whisper in locale, gratis. Niente API key, niente upload, gira tutto sul tuo Mac.
+Transcribe any video URL (Instagram reels, TikTok, YouTube, YT Shorts, Twitter/X, Vimeo, and anything yt-dlp supports) using OpenAI Whisper running locally on your Mac. Free, no API key, no uploads.
 
-## Come funziona
+## How it works
 
-1. Mandi un link a Claude Code dicendo "trascrivi questo" o "transcribe this".
-2. Claude scarica solo l'audio col tool `yt-dlp`.
-3. Lo passa a `whisper` (locale) per la trascrizione.
-4. Ti stampa il testo direttamente in chat.
+1. You paste a video URL into Claude Code and ask "transcribe this".
+2. Claude downloads only the audio with `yt-dlp`.
+3. Pipes it into local `whisper` for speech-to-text.
+4. Prints the transcript right back in chat.
 
-## Installazione (5 minuti)
+## Install (5 minutes)
 
-### 1. Installa le dipendenze (una volta sola)
+### 1. Install dependencies (one-time)
 
-Ti serve [Homebrew](https://brew.sh). Se non ce l'hai, installa prima quello.
+You need [Homebrew](https://brew.sh). If you don't have it, install that first.
 
 ```bash
 brew install yt-dlp ffmpeg openai-whisper
 ```
 
-### 2. Installa la skill
+### 2. Install the skill
 
 ```bash
 mkdir -p ~/.claude/skills
@@ -27,33 +27,33 @@ git clone https://github.com/criscatalyst/transcribe-skill.git ~/.claude/skills/
 chmod +x ~/.claude/skills/transcribe/transcribe.sh
 ```
 
-### 3. Verifica
+### 3. Try it
 
-In una nuova sessione di Claude Code, scrivi:
+Start a new Claude Code session and paste:
 
-> trascrivi questo: https://www.instagram.com/reel/...
+> transcribe this: https://www.instagram.com/reel/...
 
-Claude riconoscerà la skill `transcribe` e partirà. Alla prima esecuzione scarica i pesi del modello Whisper (~500MB per il default `small`), poi va in cache.
+Claude will pick up the `transcribe` skill and run it. The first run downloads the Whisper model weights (~500MB for the default `small` model), then they're cached.
 
-## Opzioni
+## Options
 
-- **Modello**: default `small` (veloce, buono per reel). Per audio sporco o accenti forti usa `medium`. Per video lunghi e qualità top, `large-v3` (lento).
-- **Lingua**: auto-detect. Su clip corti capita che sbagli — basta dire "trascrivi in italiano" o "in english".
+- **Model**: defaults to `small` (fast, good for short-form). Use `medium` for noisy audio or strong accents. Use `large-v3` for top-tier quality (slow).
+- **Language**: auto-detected. On very short clips it sometimes guesses wrong — just tell Claude "transcribe in English" / "in Italian" and re-run.
 
-## Costi
+## Cost
 
-Zero. Tutto locale. Nessuna API.
+Zero. Everything runs locally. No API.
 
-## Problemi comuni
+## Common issues
 
-- **Reel privato** → yt-dlp fallisce. Devi essere loggato; passa i cookies del browser (Claude te lo proporrà).
-- **Lingua sbagliata** → digli quale lingua è e rilancia.
-- **Video silenzioso / solo musica** → trascrizione vuota. Normale.
+- **Private reel** → yt-dlp fails. You need to be logged in; Claude will offer to retry using your browser cookies.
+- **Wrong language detected** → tell it the language and rerun.
+- **Silent / music-only video** → empty transcript. Expected.
 
 ## Stack
 
-- `yt-dlp` — download audio da praticamente qualsiasi sito video
-- `ffmpeg` — conversione audio
-- `openai-whisper` — modello speech-to-text di OpenAI, eseguito in locale
+- `yt-dlp` — pulls audio from almost any video site
+- `ffmpeg` — audio conversion
+- `openai-whisper` — OpenAI's speech-to-text model, run locally
 
 — Cris

@@ -1,6 +1,6 @@
 ---
 name: transcribe
-description: Transcribe any video URL (Instagram reel, TikTok, YouTube / YT Shorts, Twitter/X, Facebook, Vimeo — anything yt-dlp supports) using local OpenAI Whisper. Trigger when the user pastes a video URL and asks to "transcribe", "trascrivi", "get the script", "what does he say", "estrai testo", or wants spoken content as text.
+description: Transcribe any video URL (Instagram reel, TikTok, YouTube / YT Shorts, Twitter/X, Facebook, Vimeo — anything yt-dlp supports) using local OpenAI Whisper. Trigger when the user pastes a video URL and asks to "transcribe", "get the script", "what does he say", or wants spoken content as text.
 ---
 
 # Transcribe
