@@ -21,11 +21,9 @@ brew install yt-dlp ffmpeg openai-whisper
 
 ### 2. Installa la skill
 
-Copia la cartella `transcribe` dentro `~/.claude/skills/`:
-
 ```bash
 mkdir -p ~/.claude/skills
-cp -r ~/Desktop/transcribe-skill ~/.claude/skills/transcribe
+git clone https://github.com/criscatalyst/transcribe-skill.git ~/.claude/skills/transcribe
 chmod +x ~/.claude/skills/transcribe/transcribe.sh
 ```
 
