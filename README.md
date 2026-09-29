@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> **This repo has moved to [criscatalyst/creator-skills](https://github.com/criscatalyst/creator-skills/tree/main/skills/transcribe).** It is archived and no longer updated: the latest version of this skill lives there.
+>
+> Install it as a plugin in Claude Code: `/plugin marketplace add criscatalyst/creator-skills` then `/plugin install transcribe@creator-skills`.
+
 # Transcribe — Claude Code skill
 
 Transcribe any video URL (Instagram reels, TikTok, YouTube, YT Shorts, Twitter/X, Vimeo, and anything yt-dlp supports) using OpenAI Whisper running locally on your Mac. Free, no API key, no uploads.
